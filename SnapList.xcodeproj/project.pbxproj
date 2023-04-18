@@ -15,6 +15,7 @@
 		E9297C5F29EED9E200AF9302 /* PhotoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C5E29EED9E200AF9302 /* PhotoType.swift */; };
 		E9297C6129EEDA0C00AF9302 /* SendPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C6029EEDA0C00AF9302 /* SendPhoto.swift */; };
 		E9297C6329EEDA6C00AF9302 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C6229EEDA6C00AF9302 /* Constants.swift */; };
+		E9297C6529EEDC1B00AF9302 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C6429EEDC1B00AF9302 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E9297C5E29EED9E200AF9302 /* PhotoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoType.swift; sourceTree = "<group>"; };
 		E9297C6029EEDA0C00AF9302 /* SendPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPhoto.swift; sourceTree = "<group>"; };
 		E9297C6229EEDA6C00AF9302 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E9297C6429EEDC1B00AF9302 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		E9297C5929EED19500AF9302 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E9297C6429EEDC1B00AF9302 /* APIService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9297C5D29EED9B300AF9302 /* Photo.swift in Sources */,
+				E9297C6529EEDC1B00AF9302 /* APIService.swift in Sources */,
 				E9297C4529EECDB500AF9302 /* ViewController.swift in Sources */,
 				E9297C5F29EED9E200AF9302 /* PhotoType.swift in Sources */,
 				E9297C4129EECDB500AF9302 /* AppDelegate.swift in Sources */,
