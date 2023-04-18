@@ -10,7 +10,7 @@ import Alamofire
 final class NetworkService {
     func loadPhoto(url: URL, completion: @escaping (PhotoType?) -> Void) {
         AF.request(url, method: .get)
-        .validate()
+        .validate(statusCode: 200..<300)
         .responseData() { response in
             switch response.result {
             case .success(let data):
@@ -38,6 +38,7 @@ final class NetworkService {
             multipartFormData.append(imageData, withName: "photo", fileName: "\(sendData.id).jpeg", mimeType: "image/jpeg")
             multipartFormData.append(Data("\(sendData.id)".utf8), withName: "typeId")
         }, to: url, method: .post, headers: headers)
+        .validate(statusCode: 200..<300)
         .responseDecodable(of: ServerResponse.self) { response in
             switch response.result {
             case .success(let data):

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		566847788A656A9755EEB628 /* Pods_SnapList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D067E8E6E81D8BF8E5F2BD0 /* Pods_SnapList.framework */; };
 		E9297C4129EECDB500AF9302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C4029EECDB500AF9302 /* AppDelegate.swift */; };
-		E9297C4529EECDB500AF9302 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C4429EECDB500AF9302 /* ViewController.swift */; };
+		E9297C4529EECDB500AF9302 /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C4429EECDB500AF9302 /* PhotoListViewController.swift */; };
 		E9297C4A29EECDB600AF9302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9297C4929EECDB600AF9302 /* Assets.xcassets */; };
 		E9297C4D29EECDB600AF9302 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9297C4B29EECDB600AF9302 /* LaunchScreen.storyboard */; };
 		E9297C5D29EED9B300AF9302 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C5C29EED9B300AF9302 /* Photo.swift */; };
@@ -20,6 +20,8 @@
 		E9297C6729EEDF6C00AF9302 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C6629EEDF6C00AF9302 /* NetworkService.swift */; };
 		E9297C6E29EEFE7D00AF9302 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C6D29EEFE7D00AF9302 /* ServerResponse.swift */; };
 		E93017DF29EF484900499321 /* PhotoListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93017DE29EF484900499321 /* PhotoListTableCell.swift */; };
+		E93017E129EF544300499321 /* UIImageView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93017E029EF544300499321 /* UIImageView+Ex.swift */; };
+		E93017E329EF587800499321 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93017E229EF587800499321 /* UIView+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +30,7 @@
 		85EC167F24D9DAF057BDAB87 /* Pods-SnapList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapList.debug.xcconfig"; path = "Target Support Files/Pods-SnapList/Pods-SnapList.debug.xcconfig"; sourceTree = "<group>"; };
 		E9297C3D29EECDB500AF9302 /* SnapList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9297C4029EECDB500AF9302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E9297C4429EECDB500AF9302 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E9297C4429EECDB500AF9302 /* PhotoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
 		E9297C4929EECDB600AF9302 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9297C4C29EECDB600AF9302 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9297C4E29EECDB600AF9302 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		E9297C6629EEDF6C00AF9302 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E9297C6D29EEFE7D00AF9302 /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
 		E93017DE29EF484900499321 /* PhotoListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListTableCell.swift; sourceTree = "<group>"; };
+		E93017E029EF544300499321 /* UIImageView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ex.swift"; sourceTree = "<group>"; };
+		E93017E229EF587800499321 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +130,8 @@
 		E9297C5629EED03500AF9302 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E9297C4429EECDB500AF9302 /* ViewController.swift */,
-				E93017DE29EF484900499321 /* PhotoListTableCell.swift */,
+				E93017E429EF589300499321 /* Cell */,
+				E9297C4429EECDB500AF9302 /* PhotoListViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -135,6 +139,8 @@
 		E9297C5729EED04300AF9302 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E93017E029EF544300499321 /* UIImageView+Ex.swift */,
+				E93017E229EF587800499321 /* UIView+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -179,6 +185,14 @@
 				E9297C6429EEDC1B00AF9302 /* APIEndpoint.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E93017E429EF589300499321 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E93017DE29EF484900499321 /* PhotoListTableCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,13 +312,15 @@
 				E9297C6729EEDF6C00AF9302 /* NetworkService.swift in Sources */,
 				E9297C5D29EED9B300AF9302 /* Photo.swift in Sources */,
 				E9297C6529EEDC1B00AF9302 /* APIEndpoint.swift in Sources */,
-				E9297C4529EECDB500AF9302 /* ViewController.swift in Sources */,
+				E9297C4529EECDB500AF9302 /* PhotoListViewController.swift in Sources */,
+				E93017E129EF544300499321 /* UIImageView+Ex.swift in Sources */,
 				E9297C5F29EED9E200AF9302 /* PhotoType.swift in Sources */,
 				E9297C4129EECDB500AF9302 /* AppDelegate.swift in Sources */,
 				E9297C6129EEDA0C00AF9302 /* SendPhoto.swift in Sources */,
 				E9297C6329EEDA6C00AF9302 /* Constants.swift in Sources */,
 				E9297C6E29EEFE7D00AF9302 /* ServerResponse.swift in Sources */,
 				E93017DF29EF484900499321 /* PhotoListTableCell.swift in Sources */,
+				E93017E329EF587800499321 /* UIView+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PhotoListViewController.swift
 //  SnapList
 //
 //  Created by Pavel on 18.04.23.
@@ -52,13 +52,9 @@ final class PhotoListViewController: UIViewController {
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Photos"
-        addSubviews()
+        view.add(subviews: tableView)
         makeConstraints()
         loadPhotos(page: 0)
-    }
-    
-    private func addSubviews() {
-        view.addSubview(tableView)
     }
     
     private func makeConstraints() {
@@ -69,7 +65,7 @@ final class PhotoListViewController: UIViewController {
     
     private func loadPhotos(page: Int) {
         Task {
-            NetworkService().loadPhoto(url: Endpoint.loadPhotoGETRequest(0).url, completion: { (result) in
+            NetworkService().loadPhoto(url: Endpoint.loadPhotoGETRequest(page).url, completion: { result in
                 guard let result = result else { return }
                 self.currentPhotoType = result
                 self.photos.append(contentsOf: self.currentPhotoType?.content ?? [])
@@ -99,9 +95,8 @@ extension PhotoListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "photoListTableCell", for: indexPath) as! PhotoListTableCell
         
-        if let photoStringUrl = photos[indexPath.row].image {
-            // TODO: - Recieve image from service
-            cell.photo.image = UIImage(systemName: "photo")
+        if let photoStringURL = photos[indexPath.row].image {
+            cell.photo.URLImage(url: URL(string: photoStringURL)!)
         } else {
             cell.photo.image = UIImage(systemName: "photo")
             cell.photo.tintColor = UIColor.gray
