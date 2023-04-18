@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		566847788A656A9755EEB628 /* Pods_SnapList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D067E8E6E81D8BF8E5F2BD0 /* Pods_SnapList.framework */; };
 		E9297C4129EECDB500AF9302 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C4029EECDB500AF9302 /* AppDelegate.swift */; };
 		E9297C4529EECDB500AF9302 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C4429EECDB500AF9302 /* ViewController.swift */; };
 		E9297C4A29EECDB600AF9302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9297C4929EECDB600AF9302 /* Assets.xcassets */; };
@@ -15,10 +16,15 @@
 		E9297C5F29EED9E200AF9302 /* PhotoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C5E29EED9E200AF9302 /* PhotoType.swift */; };
 		E9297C6129EEDA0C00AF9302 /* SendPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C6029EEDA0C00AF9302 /* SendPhoto.swift */; };
 		E9297C6329EEDA6C00AF9302 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C6229EEDA6C00AF9302 /* Constants.swift */; };
-		E9297C6529EEDC1B00AF9302 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C6429EEDC1B00AF9302 /* APIService.swift */; };
+		E9297C6529EEDC1B00AF9302 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C6429EEDC1B00AF9302 /* APIEndpoint.swift */; };
+		E9297C6729EEDF6C00AF9302 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C6629EEDF6C00AF9302 /* NetworkService.swift */; };
+		E9297C6E29EEFE7D00AF9302 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9297C6D29EEFE7D00AF9302 /* ServerResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D067E8E6E81D8BF8E5F2BD0 /* Pods_SnapList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnapList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E8A9A38DEAFC05F67F69652 /* Pods-SnapList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapList.release.xcconfig"; path = "Target Support Files/Pods-SnapList/Pods-SnapList.release.xcconfig"; sourceTree = "<group>"; };
+		85EC167F24D9DAF057BDAB87 /* Pods-SnapList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnapList.debug.xcconfig"; path = "Target Support Files/Pods-SnapList/Pods-SnapList.debug.xcconfig"; sourceTree = "<group>"; };
 		E9297C3D29EECDB500AF9302 /* SnapList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9297C4029EECDB500AF9302 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9297C4429EECDB500AF9302 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +35,9 @@
 		E9297C5E29EED9E200AF9302 /* PhotoType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoType.swift; sourceTree = "<group>"; };
 		E9297C6029EEDA0C00AF9302 /* SendPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPhoto.swift; sourceTree = "<group>"; };
 		E9297C6229EEDA6C00AF9302 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		E9297C6429EEDC1B00AF9302 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		E9297C6429EEDC1B00AF9302 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		E9297C6629EEDF6C00AF9302 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		E9297C6D29EEFE7D00AF9302 /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				566847788A656A9755EEB628 /* Pods_SnapList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4B0013D723C6814A191B29F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D067E8E6E81D8BF8E5F2BD0 /* Pods_SnapList.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA53F30395D24611E4A8A2EE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85EC167F24D9DAF057BDAB87 /* Pods-SnapList.debug.xcconfig */,
+				3E8A9A38DEAFC05F67F69652 /* Pods-SnapList.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E9297C3429EECDB500AF9302 = {
 			isa = PBXGroup;
 			children = (
 				E9297C3F29EECDB500AF9302 /* SnapList */,
 				E9297C3E29EECDB500AF9302 /* Products */,
+				DA53F30395D24611E4A8A2EE /* Pods */,
+				B4B0013D723C6814A191B29F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +95,7 @@
 				E9297C5A29EED1BC00AF9302 /* ViewModel */,
 				E9297C5629EED03500AF9302 /* View */,
 				E9297C5929EED19500AF9302 /* Services */,
+				E9297C6C29EEF05A00AF9302 /* Helpers */,
 				E9297C5729EED04300AF9302 /* Extensions */,
 				E9297C5829EED07500AF9302 /* Resources */,
 			);
@@ -87,6 +116,7 @@
 				E9297C5C29EED9B300AF9302 /* Photo.swift */,
 				E9297C5E29EED9E200AF9302 /* PhotoType.swift */,
 				E9297C6029EEDA0C00AF9302 /* SendPhoto.swift */,
+				E9297C6D29EEFE7D00AF9302 /* ServerResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,7 +150,7 @@
 		E9297C5929EED19500AF9302 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E9297C6429EEDC1B00AF9302 /* APIService.swift */,
+				E9297C6629EEDF6C00AF9302 /* NetworkService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -140,6 +170,14 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		E9297C6C29EEF05A00AF9302 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E9297C6429EEDC1B00AF9302 /* APIEndpoint.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9297C5129EECDB600AF9302 /* Build configuration list for PBXNativeTarget "SnapList" */;
 			buildPhases = (
+				963933BD9224F083AF62DB1D /* [CP] Check Pods Manifest.lock */,
 				E9297C3929EECDB500AF9302 /* Sources */,
 				E9297C3A29EECDB500AF9302 /* Frameworks */,
 				E9297C3B29EECDB500AF9302 /* Resources */,
+				DD85202D213E2EAA4838F4D2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,18 +245,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		963933BD9224F083AF62DB1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SnapList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD85202D213E2EAA4838F4D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SnapList/Pods-SnapList-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SnapList/Pods-SnapList-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SnapList/Pods-SnapList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E9297C3929EECDB500AF9302 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9297C6729EEDF6C00AF9302 /* NetworkService.swift in Sources */,
 				E9297C5D29EED9B300AF9302 /* Photo.swift in Sources */,
-				E9297C6529EEDC1B00AF9302 /* APIService.swift in Sources */,
+				E9297C6529EEDC1B00AF9302 /* APIEndpoint.swift in Sources */,
 				E9297C4529EECDB500AF9302 /* ViewController.swift in Sources */,
 				E9297C5F29EED9E200AF9302 /* PhotoType.swift in Sources */,
 				E9297C4129EECDB500AF9302 /* AppDelegate.swift in Sources */,
 				E9297C6129EEDA0C00AF9302 /* SendPhoto.swift in Sources */,
 				E9297C6329EEDA6C00AF9302 /* Constants.swift in Sources */,
+				E9297C6E29EEFE7D00AF9302 /* ServerResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +434,7 @@
 		};
 		E9297C5229EECDB600AF9302 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85EC167F24D9DAF057BDAB87 /* Pods-SnapList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -377,6 +462,7 @@
 		};
 		E9297C5329EECDB600AF9302 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E8A9A38DEAFC05F67F69652 /* Pods-SnapList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
