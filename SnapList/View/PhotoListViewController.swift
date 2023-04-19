@@ -8,27 +8,6 @@
 import UIKit
 import SnapKit
 
-//class ViewController: UIViewController {
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        view.backgroundColor = .purple
-//        Task {
-//            NetworkService().loadPhoto(url: Endpoint.loadPhotoGETRequest(0).url, completion: { (result) in
-//                guard let result = result else { return }
-//                print(result)
-//            })
-//        }
-//        print(Endpoint.sendPhotoPOSTRequest.url)
-//        let sendData = SendPhoto(id: 1, developer: "", image: UIImage(named: "Test")!)
-//        print(sendData)
-//        Task {
-//            NetworkService().sendPhoto(url: Endpoint.sendPhotoPOSTRequest.url, sendData: sendData)
-//        }
-//    }
-//}
-
-import UIKit
-
 final class PhotoListViewController: UIViewController {
     private var photos: [Photo] = []
     private var currentPhotoType: PhotoType!
@@ -65,7 +44,7 @@ final class PhotoListViewController: UIViewController {
     
     private func loadPhotos(page: Int) {
         Task {
-            NetworkService().loadPhoto(url: Endpoint.loadPhotoGETRequest(page).url, completion: { result in
+            networkService.loadPhoto(url: Endpoint.loadPhotoGETRequest(page).url, completion: { result in
                 guard let result = result else { return }
                 self.currentPhotoType = result
                 self.photos.append(contentsOf: self.currentPhotoType?.content ?? [])
@@ -73,11 +52,30 @@ final class PhotoListViewController: UIViewController {
             })
         }
     }
+    
+    private func sendPhoto(sendData: SendPhoto) {
+        Task {
+            networkService.sendPhoto(url: Endpoint.sendPhotoPOSTRequest.url, sendData: sendData)
+        }
+    }
+    
+    private func showCamera() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.delegate = self
+        present(picker, animated: true)
+    }
 }
 
 extension PhotoListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(photos[indexPath.row])
+        selectedPhoto = photos[indexPath.row]
+        if ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] != nil {
+            print("Simulator")
+        } else {
+            showCamera()
+        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -105,5 +103,22 @@ extension PhotoListViewController: UITableViewDataSource {
         cell.name.text = photos[indexPath.row].name
 
         return cell
+    }
+}
+
+extension PhotoListViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        
+        guard let image = info[.originalImage] as? UIImage else { return }
+        
+        let sendData = SendPhoto(id: selectedPhoto.id, developer: Constants.developerName, image: image)
+        
+        sendPhoto(sendData: sendData)
+        print(image)
     }
 }
