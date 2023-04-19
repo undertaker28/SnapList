@@ -13,7 +13,7 @@ final class PhotoListViewController: UIViewController {
     private var currentPhotoType: PhotoType!
     private var networkService = NetworkService()
     private var selectedPhoto: Photo!
-
+    
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.delegate = self
@@ -28,7 +28,7 @@ final class PhotoListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "BackgroundColor")
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Photos"
         view.add(subviews: tableView)
@@ -69,7 +69,6 @@ final class PhotoListViewController: UIViewController {
 
 extension PhotoListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(photos[indexPath.row])
         selectedPhoto = photos[indexPath.row]
         if ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] != nil {
             print("Simulator")
@@ -91,17 +90,21 @@ extension PhotoListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "photoListTableCell", for: indexPath) as! PhotoListTableCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "photoListTableCell", for: indexPath) as? PhotoListTableCell else {
+            fatalError("Unable to dequeue PhotoListTableCell")
+        }
+        
+        cell.backgroundColor = UIColor(named: "BackgroundColor")
         
         if let photoStringURL = photos[indexPath.row].image {
             cell.photo.URLImage(url: URL(string: photoStringURL)!)
         } else {
             cell.photo.image = UIImage(systemName: "photo")
-            cell.photo.tintColor = UIColor.gray
+            cell.photo.tintColor = .lightGray
         }
         
         cell.name.text = photos[indexPath.row].name
-
+        
         return cell
     }
 }
@@ -115,10 +118,8 @@ extension PhotoListViewController: UIImagePickerControllerDelegate, UINavigation
         picker.dismiss(animated: true)
         
         guard let image = info[.originalImage] as? UIImage else { return }
-        
         let sendData = SendPhoto(id: selectedPhoto.id, developer: Constants.developerName, image: image)
         
         sendPhoto(sendData: sendData)
-        print(image)
     }
 }

@@ -22,6 +22,8 @@
 		E93017DF29EF484900499321 /* PhotoListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93017DE29EF484900499321 /* PhotoListTableCell.swift */; };
 		E93017E129EF544300499321 /* UIImageView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93017E029EF544300499321 /* UIImageView+Ex.swift */; };
 		E93017E329EF587800499321 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E93017E229EF587800499321 /* UIView+Ex.swift */; };
+		E9F9261029F04393005CBA94 /* MarkPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E9F9260F29F04393005CBA94 /* MarkPro-Bold.otf */; };
+		E9F9261229F04693005CBA94 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9F9261129F04693005CBA94 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		E93017DE29EF484900499321 /* PhotoListTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListTableCell.swift; sourceTree = "<group>"; };
 		E93017E029EF544300499321 /* UIImageView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ex.swift"; sourceTree = "<group>"; };
 		E93017E229EF587800499321 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
+		E9F9260F29F04393005CBA94 /* MarkPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkPro-Bold.otf"; sourceTree = "<group>"; };
+		E9F9261129F04693005CBA94 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +102,8 @@
 			children = (
 				E9297C5429EECFDC00AF9302 /* Application */,
 				E9297C5529EED03000AF9302 /* Model */,
-				E9297C5629EED03500AF9302 /* View */,
+				E9F9260D29F04141005CBA94 /* VIew */,
+				E9297C5629EED03500AF9302 /* Controller */,
 				E9297C5929EED19500AF9302 /* Services */,
 				E9297C6C29EEF05A00AF9302 /* Helpers */,
 				E9297C5729EED04300AF9302 /* Extensions */,
@@ -126,13 +131,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E9297C5629EED03500AF9302 /* View */ = {
+		E9297C5629EED03500AF9302 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E93017E429EF589300499321 /* Cell */,
 				E9297C4429EECDB500AF9302 /* PhotoListViewController.swift */,
 			);
-			path = View;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		E9297C5729EED04300AF9302 /* Extensions */ = {
@@ -148,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				E9297C5B29EED23200AF9302 /* Assets */,
+				E9F9260E29F04388005CBA94 /* Fonts */,
 				E9297C4B29EECDB600AF9302 /* LaunchScreen.storyboard */,
 				E9297C6229EEDA6C00AF9302 /* Constants.swift */,
 				E9297C4E29EECDB600AF9302 /* Info.plist */,
@@ -167,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				E9297C4929EECDB600AF9302 /* Assets.xcassets */,
+				E9F9261129F04693005CBA94 /* Colors.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -185,6 +191,22 @@
 				E93017DE29EF484900499321 /* PhotoListTableCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		E9F9260D29F04141005CBA94 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				E93017E429EF589300499321 /* Cell */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		E9F9260E29F04388005CBA94 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E9F9260F29F04393005CBA94 /* MarkPro-Bold.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +269,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9F9261029F04393005CBA94 /* MarkPro-Bold.otf in Resources */,
+				E9F9261229F04693005CBA94 /* Colors.xcassets in Resources */,
 				E9297C4D29EECDB600AF9302 /* LaunchScreen.storyboard in Resources */,
 				E9297C4A29EECDB600AF9302 /* Assets.xcassets in Resources */,
 			);
@@ -455,6 +479,7 @@
 				DEVELOPMENT_TEAM = G4T7QK2U75;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SnapList/Resources/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to capture photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -484,6 +509,7 @@
 				DEVELOPMENT_TEAM = G4T7QK2U75;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SnapList/Resources/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to capture photos.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
